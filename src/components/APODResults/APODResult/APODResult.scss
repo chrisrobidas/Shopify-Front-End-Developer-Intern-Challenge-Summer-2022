@@ -1,0 +1,8 @@
+.Result-Image {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+
+    @media (max-width: 489px) {
+        border-radius: 0px;
+    }
+}
