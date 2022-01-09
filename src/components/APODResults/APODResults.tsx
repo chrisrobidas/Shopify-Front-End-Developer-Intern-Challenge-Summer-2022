@@ -6,7 +6,7 @@ function APODResults(props: any) {
     return (
         <div>
             {entries.map((entry: any) => 
-                <APODResult key={entry.url} title={entry.title} description={entry.explanation} date={entry.date} src={entry.url}/>
+                <APODResult key={entry.url} title={entry.title} description={entry.explanation} date={entry.date} src={entry.url} type={entry.media_type}/>
             )}
         </div>
     );

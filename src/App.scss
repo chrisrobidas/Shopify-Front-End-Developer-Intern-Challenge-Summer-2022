@@ -1,0 +1,24 @@
+.Centered {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 20px;
+    width: 100%;
+}
+
+.Content-Wrap{
+    margin-top: 30px;
+}
+
+.Top-Bar {
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(23, 24, 24, 0.5);
+    left: 0px;
+    outline: 0.1rem solid transparent;
+    padding: 20px;
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+}
