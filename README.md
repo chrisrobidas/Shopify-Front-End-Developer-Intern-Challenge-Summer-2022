@@ -2,8 +2,7 @@
 
 Spacestagram: Image-sharing from the final frontier. Spacestagram is a webpage that can pull images from NASA's APIs, 
 and allow the user to “like” and “unlike” their favourite images. Live demo at 
-[https://master-yeet.github.io/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/]
-(https://master-yeet.github.io/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/)
+https://master-yeet.github.io/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/
 
 # Getting started
 
