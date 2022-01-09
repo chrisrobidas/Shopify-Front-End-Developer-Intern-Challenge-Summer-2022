@@ -54,8 +54,10 @@ function App() {
   return (
     <>
       <div className='Top-Bar'>
-        <Heading>Spacestagram</Heading>
-        <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
+        <div className='Top-Bar-Content'>
+          <h1 className='Title'>Spacestagram</h1>
+          <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
+        </div>
       </div>
       <div className='Content-Wrap'>
         <Page>

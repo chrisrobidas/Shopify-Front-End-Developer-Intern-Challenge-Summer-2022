@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./APODResult.scss";
-import { Button, Card, Heading, Stack } from '@shopify/polaris';
+import { Button, Card, Heading, Icon, Stack } from '@shopify/polaris';
+import { HeartMajor } from '@shopify/polaris-icons';
 
 function APODResult(props: any) {
     const { title, description, date, src, type } = props;
@@ -43,6 +44,14 @@ function APODResult(props: any) {
 
     const width = useContainerWidth(componentRef);
 
+    useEffect(() => {
+        setIsLiked(JSON.parse(window.localStorage.getItem(src + '_isLiked') || 'false'));
+    }, []);
+    
+    useEffect(() => {
+        window.localStorage.setItem(src + '_isLiked', isLiked.toString());
+    }, [isLiked]);
+
     return (
         <Card>
             {type === "image"
@@ -53,7 +62,7 @@ function APODResult(props: any) {
                 <Stack>
                     <Heading>{title} - {date}</Heading>
                     <p>{description}</p>
-                    <Button onClick={() => changeIsLiked()} pressed={isLiked}>Like</Button>
+                    <Button onClick={() => changeIsLiked()} pressed={isLiked} icon={HeartMajor}>Like</Button>
                 </Stack>
             </Card.Section>
         </Card>
