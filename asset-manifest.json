@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/css/main.e32d492c.css",
+    "main.js": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/js/main.6dd61906.js",
+    "index.html": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/index.html",
+    "main.e32d492c.css.map": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/css/main.e32d492c.css.map",
+    "main.6dd61906.js.map": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/js/main.6dd61906.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e32d492c.css",
+    "static/js/main.6dd61906.js"
+  ]
+}
