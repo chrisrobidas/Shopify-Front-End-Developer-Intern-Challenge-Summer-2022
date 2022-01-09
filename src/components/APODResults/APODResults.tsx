@@ -1,4 +1,4 @@
-import APODResult from "./APODResult";
+import APODResult from './APODResult';
 
 function APODResults(props: any) {
     const entries = props.entries;

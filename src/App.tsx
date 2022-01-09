@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { getAPODEntries } from "./api/APODClient";
-import APODResults from "./components/APODResults";
-import { Heading, Page, Spinner, TopBar } from '@shopify/polaris';
-import "./App.scss";
+import { getAPODEntries } from './api/APODClient';
+import APODResults from './components/APODResults';
+import { Page, Spinner } from '@shopify/polaris';
+import './App.scss';
 
 function App() {
   const [entries, _setEntries] = useState([]);
@@ -21,30 +21,31 @@ function App() {
     _setLoading(value);
   };
 
-  async function getNASAEntries() {
-    if (loadingRef.current) return;
-
-    setLoading(true);
-
-    try {
-      const foundEntries = await getAPODEntries();
-      const newEntries = entriesRef.current.concat(foundEntries);
-      setEntries(newEntries);
-    } catch (error: any) {
-      setError(error);
-    }
-
-    setLoading(false);
-  }
-
-  function handleScroll() {
-    const isBottom = document.documentElement.scrollHeight - document.documentElement.scrollTop === document.documentElement.clientHeight;
-    if (isBottom) {
-      getNASAEntries();
-    }
-  }
-
   useEffect(() => {
+    async function getNASAEntries() {
+      if (loadingRef.current) return;
+  
+      setLoading(true);
+  
+      try {
+        const foundEntries = await getAPODEntries();
+        const newEntries = entriesRef.current.concat(foundEntries);
+        setEntries(newEntries);
+        setError(undefined);
+      } catch (error: any) {
+        setError(error);
+      }
+  
+      setLoading(false);
+    }
+  
+    function handleScroll() {
+      const isBottom = document.documentElement.scrollHeight - document.documentElement.scrollTop === document.documentElement.clientHeight;
+      if (isBottom) {
+        getNASAEntries();
+      }
+    }
+
     getNASAEntries();
 
     window.addEventListener('scroll', handleScroll);
@@ -64,10 +65,15 @@ function App() {
           {entries && 
             <APODResults entries={entries}/>
           }
+          {error &&
+            <div className='Centered'>
+              <p>An error ocurred, please try reloading the page</p>
+            </div>
+          }
           {loading &&
-          <div className='Centered'>
-            <Spinner/>
-          </div>
+            <div className='Centered'>
+              <Spinner/>
+            </div>
           }
         </Page>
       </div>
