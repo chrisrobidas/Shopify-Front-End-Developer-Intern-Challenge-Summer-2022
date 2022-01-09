@@ -27,6 +27,6 @@ to run the app in developement mode.
 
 # Attribution
 
-
+Data provided by Astronomy Picture of the Day (APOD).
 
 ### See you to the moon!
