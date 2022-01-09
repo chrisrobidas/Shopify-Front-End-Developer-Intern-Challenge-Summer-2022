@@ -8,19 +8,21 @@
 }
 
 .Content-Wrap{
-    margin-top: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-.Title {
-    font-family: "Brush Script MT", cursive;
-    font-size: 2.5em;
-    margin-bottom: 10px;
+.Logo {
+    margin-top: 5px;
+    width: 200px;
 }
 
 .Top-Bar {
     align-items: center;
     background-color: white;
-    box-shadow: 0px 0px 5px rgba(23, 24, 24, 0.5);
+    box-shadow: 0px 0px 5px rgba(23, 24, 24, 0.25);
     display: flex;
     justify-content: center;
     left: 0px;

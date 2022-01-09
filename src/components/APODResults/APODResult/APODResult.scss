@@ -1,3 +1,29 @@
+.Card-Container {
+    max-width: 615px;
+    margin-bottom: 20px;
+}
+
+.Heart-Icon {
+    height: 20px;
+}
+
+.Image-Bottom {
+    align-content: space-between;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Like-Button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-size: 1em;
+    justify-content: center;
+    padding: 0px;
+}
+
 .Result-Media {
     border: none;
     border-radius: 10px 10px 0px 0px;

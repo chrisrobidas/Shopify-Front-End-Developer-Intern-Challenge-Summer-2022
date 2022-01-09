@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './APODResult.scss';
-import { Button, Card, Heading, Stack } from '@shopify/polaris';
-import { HeartMajor } from '@shopify/polaris-icons';
+import { Card, Heading, Stack } from '@shopify/polaris';
+import HeartIconEmpty from '../../../ressources/like_empty.png';
+import HeartIconFull from '../../../ressources/like_full.png';
 
 function APODResult(props: any) {
     const { title, description, date, src, type } = props;
@@ -53,19 +54,26 @@ function APODResult(props: any) {
     }, [src, isLiked]);
 
     return (
-        <Card>
-            {type === 'image'
-                ? <img className='Result-Media' src={src} alt={title}/>
-                : <iframe title={src} ref={componentRef} height={(width * 9) / 16} className='Result-Media' src={src} allow='fullscreen;'/>
-            }
-            <Card.Section>
-                <Stack>
-                    <Heading>{title} - {date}</Heading>
-                    <p>{description}</p>
-                    <Button onClick={() => changeIsLiked()} pressed={isLiked} icon={HeartMajor}>Like</Button>
-                </Stack>
-            </Card.Section>
-        </Card>
+        <div className='Card-Container'>
+            <Card>
+                {type === 'image'
+                    ? <img className='Result-Media' src={src} alt={title}/>
+                    : <iframe title={src} ref={componentRef} height={(width * 9) / 16} className='Result-Media' src={src} allow='fullscreen;'/>
+                }
+                <Card.Section>
+                    <Stack vertical={true}>
+                        <div className='Image-Bottom'>
+                            <button className='Like-Button' onClick={() => changeIsLiked()}>
+                                <img className='Heart-Icon' src={isLiked ? HeartIconFull : HeartIconEmpty} alt='Heart icon'/>
+                            </button>
+                            <p>{date}</p>
+                        </div>
+                        <Heading>{title}</Heading>
+                        <p>{description}</p>
+                    </Stack>
+                </Card.Section>
+            </Card>
+        </div>
     );
 }
 

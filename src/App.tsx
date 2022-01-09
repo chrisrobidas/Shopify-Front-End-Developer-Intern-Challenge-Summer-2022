@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { getAPODEntries } from './api/APODClient';
 import APODResults from './components/APODResults';
 import { Page, Spinner } from '@shopify/polaris';
+import SpacestagramLogo from './ressources/Spacestagram.png';
 import './App.scss';
 
 function App() {
@@ -56,8 +57,7 @@ function App() {
     <>
       <div className='Top-Bar'>
         <div className='Top-Bar-Content'>
-          <h1 className='Title'>Spacestagram</h1>
-          <p>Brought to you by NASA's Astronomy Photo of the Day (APOD) API</p>
+          <img className='Logo' src={SpacestagramLogo} alt='Spacestagram'/>
         </div>
       </div>
       <div className='Content-Wrap'>
