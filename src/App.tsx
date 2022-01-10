@@ -3,21 +3,22 @@ import { getAPODEntries } from './api/APODClient';
 import APODResults from './components/APODResults';
 import { Page, Spinner } from '@shopify/polaris';
 import SpacestagramLogo from './ressources/Spacestagram.png';
+import { APODEntry } from './api/APODClient';
 import './App.scss';
 
 function App() {
-  const [entries, _setEntries] = useState([]);
+  const [entries, _setEntries] = useState<APODEntry[]>([]);
   const [error, setError] = useState<Error>();
   const [loading, _setLoading] = useState(false);
 
   const entriesRef = useRef(entries);
-  const setEntries = (value: any) => {
+  const setEntries = (value: APODEntry[]) => {
     entriesRef.current = value;
     _setEntries(value);
   };
 
   const loadingRef = useRef(loading);
-  const setLoading = (value: any) => {
+  const setLoading = (value: boolean) => {
     loadingRef.current = value;
     _setLoading(value);
   };
@@ -29,12 +30,12 @@ function App() {
       setLoading(true);
   
       try {
-        const foundEntries = await getAPODEntries();
-        const newEntries = entriesRef.current.concat(foundEntries);
+        const result = await getAPODEntries();
+        const newEntries = entriesRef.current.concat(result);
         setEntries(newEntries);
-        setError(undefined);
-      } catch (error: any) {
-        setError(error);
+      } catch (error) {
+        if (error instanceof Error)
+          setError(error);
       }
   
       setLoading(false);
@@ -79,6 +80,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;

@@ -1,18 +1,31 @@
-import { useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 import './APODResult.scss';
 import { Card, Heading, Stack } from '@shopify/polaris';
 import HeartIconEmpty from '../../../ressources/like_empty.png';
 import HeartIconFull from '../../../ressources/like_full.png';
 
-function APODResult(props: any) {
-    const { title, description, date, src, type } = props;
+interface APODEntryProps {
+    title: string;
+    description: string;
+    date: string;
+    src: string;
+    type: string;
+}
+
+const APODResult: React.FC<APODEntryProps> = ({
+    title,
+    description,
+    date,
+    src,
+    type
+}) => {
     const [isLiked, setIsLiked] = useState(false);
 
     const changeIsLiked = () => {
         setIsLiked(!isLiked);
     };
 
-    const componentRef = useRef<any>(null);
+    const componentRef = useRef<HTMLIFrameElement>(null);
 
     const getWidth = () => {
         if (componentRef.current !== null){
@@ -21,7 +34,7 @@ function APODResult(props: any) {
         return 0;
     };
 
-    const useContainerWidth = (componentRef: any) => {
+    const useContainerWidth = (componentRef: RefObject<HTMLIFrameElement>) => {
         const [width, setWidth] = useState(0);
     
         useEffect(() => {

@@ -6,6 +6,16 @@ start_date.setDate(start_date.getDate() - 4);
 
 let end_date = new Date();
 
+export interface APODEntry {
+    date: string;
+    explanation: string;
+    media_type: "image" | "video";
+    service_version: string;
+    title: string;
+    url: string;
+    hdurl: string;
+}
+
 function buildAPODQuery(){
     const url = new URL(BASE_APOD_API_URL);
     url.searchParams.set('api_key', APOD_API_KEY);
@@ -26,7 +36,7 @@ export async function getAPODEntries() {
             const result = await res.json();
             result.reverse();
 
-            return result;
+            return result as APODEntry[];
         } else {
             throw new Error(`Status: ${res.status}: ${res.statusText}`);
         }
