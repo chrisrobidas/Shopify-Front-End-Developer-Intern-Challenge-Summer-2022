@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/css/main.b3c3176d.css",
-    "main.js": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/js/main.bf02260e.js",
+    "main.js": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/js/main.5a4aacfd.js",
     "static/media/Spacestagram.png": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/media/Spacestagram.f7d61798a0722c3abb70.png",
     "index.html": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/index.html",
     "main.b3c3176d.css.map": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/css/main.b3c3176d.css.map",
-    "main.bf02260e.js.map": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/js/main.bf02260e.js.map"
+    "main.5a4aacfd.js.map": "/Shopify-Front-End-Developer-Intern-Challenge-Summer-2022/static/js/main.5a4aacfd.js.map"
   },
   "entrypoints": [
     "static/css/main.b3c3176d.css",
-    "static/js/main.bf02260e.js"
+    "static/js/main.5a4aacfd.js"
   ]
 }
